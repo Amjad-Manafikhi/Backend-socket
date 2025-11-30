@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 // Emit handler
 app.put("/", (req, res) => {
   const { socketId, event, data } = req.body;
-
+    console.log(data,"data");
   const sender = io.sockets.sockets.get(socketId);
 
   if (sender) sender.broadcast.emit(event, data);
