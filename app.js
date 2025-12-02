@@ -9,7 +9,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = initSocket(server);
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // Simple test route
 app.get("/", (req, res) => {
